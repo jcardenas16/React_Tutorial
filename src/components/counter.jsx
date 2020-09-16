@@ -26,14 +26,34 @@ class Counter extends Component {
   // }
 
   // event handler
-  handleIncrement = () => {
-    console.log("Increment Clicked", this);
-    this.setState({ value: this.state.value + 1 });
-  };
+  // handleIncrement = () => {
+  //   console.log("Increment Clicked", this);
+  //   this.setState({ value: this.state.value + 1 });
+  // };
 
   // event handler controlled component
 
   // -----------------------------------------------------------------------------------
+
+  // most - called after a component is updated which means we have a new state or new props
+  //        so we can compare this new state with the old state or the new props with the new props
+  //        and if there is a change we can make an AJAX request to get new data from the server
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data from the server
+      console.log("We're inside");
+    }
+  }
+
+  // mosh - method is called just before a component is removed from the DOM
+  //      - allows us to do a bit of clean up (listeners, timers) before the component is removed from the DOM
+  //        otherwise we will be left with MEMORY LEAKS!!
+  componentWillUnmount() {
+    console.log("Counter - unmount");
+  }
 
   render() {
     // console.log("props: ", this.props);

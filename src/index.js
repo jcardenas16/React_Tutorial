@@ -7,9 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 // import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Counters from "./components/counters.jsx";
-
-ReactDOM.render(<Counters />, document.getElementById("root"));
+// ReactDOM.render(<Counters />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 // class Square extends React.Component {
 //   render() {
 //     return <button className="square">{/* TODO */}</button>;
